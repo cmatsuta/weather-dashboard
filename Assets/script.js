@@ -25,7 +25,7 @@ function populateCityWeather(city, citySearchList) {
     "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=f0aec341f964791825b4d29149bf83bc";
 
   var queryURL2 =
-    "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=f0aec341f964791825b4d29149bf83bc";
+    "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=f0aec341f964791825b4d29149bf83bc";
 
   var lat;
 
