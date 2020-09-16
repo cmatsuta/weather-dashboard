@@ -13,6 +13,6 @@ This weather dashboard app was built with search functionality to find current w
 ## Screenshot
 ![project screenshot](Assets/weather-dashboard-screenshot.png)
 
-##Link to my deployed app
+## Link to my deployed app
 https://cmatsuta.github.io/weather-dashboard/
 
