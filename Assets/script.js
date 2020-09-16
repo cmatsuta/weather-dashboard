@@ -71,10 +71,7 @@ function populateCityWeather(city, citySearchList) {
 
       var queryURL3 =
         "https://api.openweathermap.org/data/2.5/uvi/forecast?&units=imperial&appid=f0aec341f964791825b4d29149bf83bc&q=" +
-        "&lat=" +
-        lat +
-        "&lon=" +
-        lon;
+        "&lat=" + lat + "&lon=" + lon;
 
       $.ajax({
         url: queryURL3,
@@ -98,9 +95,8 @@ function populateCityWeather(city, citySearchList) {
           console.log(queryURL2);
 
           console.log(forecast);
-          // Loop through the forecast list array and display a single forecast entry/time (5th entry of each day which is close to the highest temp/time of the day) from each of the 5 days
+          // Loop through the forecast list array and display a single forecast entry
           for (var i = 6; i < forecast.length; i += 8) {
-            // 6, 14, 22, 30, 38
             var forecastDate = $("<h5>");
 
             var forecastPosition = (i + 2) / 8;
@@ -115,21 +111,19 @@ function populateCityWeather(city, citySearchList) {
             var forecastIcon = $("<img>");
             forecastIcon.attr(
               "src",
-              "https://openweathermap.org/img/wn/" +
-                forecast[i].weather[0].icon +
-                ".png"
+              "https://openweathermap.org/img/wn/" +  forecast[i].weather[0].icon + ".png"
             );
 
-            $(".forecast-icon").empty();
-            $(".forecast-icon").append(forecastIcon);
+            $("#forecast-icon" + forecastPosition).empty();
+            $("#forecast-icon" + forecastPosition).append(forecastIcon);
 
-            console.log(forecast.list[i].weather[0].icon);
+            console.log(forecast[i].weather[0].icon);
 
             $("#forecast-temp" + forecastPosition).text(
-              "Temp: " + forecast.list[i].main.temp + " °F"
+              "Temp: " + forecast[i].main.temp + " °F"
             );
             $("#forecast-humidity" + forecastPosition).text(
-              "Humidity: " + forecast.list[i].main.humidity + "%"
+              "Humidity: " + forecast[i].main.humidity + "%"
             );
 
             $(".forecast").attr(
@@ -166,8 +160,6 @@ $(document).ready(function() {
       .toLowerCase();
 
     if (city != "") {
-      //Check to see if there is any text entered
-    
       citySearchList[city] = true;
     localStorage.setItem("citySearchList", JSON.stringify(citySearchList));
 
