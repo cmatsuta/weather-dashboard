@@ -18,6 +18,8 @@ function createCityList(citySearchList) {
   }
 }
 
+//APIKey=f0aec341f964791825b4d29149bf83bc
+
 function populateCityWeather(city, citySearchList) {
   createCityList(citySearchList);
 
@@ -63,9 +65,9 @@ function populateCityWeather(city, citySearchList) {
       $("#weather-icon").append(weatherIcon);
 
       // $("#current-temp").text("Temperature: " + weather.main.temp + " °F");
-      $("#current-temp").text("Temperature: " + 
-      (weather.main.temp - 273.15).toFixed(2) + " " + String.fromCharCode(176) + "C (" +
-      ((weather.main.temp - 273.15) * 9/5 + 32).toFixed(2) + " " + String.fromCharCode(176) + "F)");
+      $("#current-temp").text("Temperature: " +
+        (weather.main.temp - 273.15).toFixed(2) + " " + String.fromCharCode(176) + "C (" +
+        ((weather.main.temp - 273.15) * 9 / 5 + 32).toFixed(2) + " " + String.fromCharCode(176) + "F)");
       $("#current-humidity").text("Humidity: " + weather.main.humidity + "%");
       $("#current-wind").text("Wind Speed: " + weather.wind.speed + " MPH");
 
@@ -129,9 +131,9 @@ function populateCityWeather(city, citySearchList) {
             //   "Temp: " + forecast.list[i].main.temp + " °F"
             // );
 
-            $("#forecast-temp" + forecastPosition).text("Temperature: " + 
-            (forecast.list[i].main.temp - 273.15).toFixed(2) + " " + String.fromCharCode(176) + "C (" +
-            ((forecast.list[i].main.temp - 273.15) * 9/5 + 32).toFixed(2) + " " + String.fromCharCode(176) + "F)");
+            $("#forecast-temp" + forecastPosition).text("Temperature: " +
+              (forecast.list[i].main.temp - 273.15).toFixed(2) + " " + String.fromCharCode(176) + "C (" +
+              ((forecast.list[i].main.temp - 273.15) * 9 / 5 + 32).toFixed(2) + " " + String.fromCharCode(176) + "F)");
 
             $("#forecast-humidity" + forecastPosition).text(
               "Humidity: " + forecast.list[i].main.humidity + "%"
