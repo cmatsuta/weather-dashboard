@@ -62,7 +62,10 @@ function populateCityWeather(city, citySearchList) {
       $("#weather-icon").empty();
       $("#weather-icon").append(weatherIcon);
 
-      $("#current-temp").text("Temperature: " + weather.main.temp + " °F");
+      // $("#current-temp").text("Temperature: " + weather.main.temp + " °F");
+      $("#current-temp").text("Temperature: " + 
+      (weather.main.temp - 273.15).toFixed(2) + " " + String.fromCharCode(176) + "C (" +
+      ((weather.main.temp - 273.15) * 9/5 + 32).toFixed(2) + " " + String.fromCharCode(176) + "F)");
       $("#current-humidity").text("Humidity: " + weather.main.humidity + "%");
       $("#current-wind").text("Wind Speed: " + weather.wind.speed + " MPH");
 
@@ -120,10 +123,16 @@ function populateCityWeather(city, citySearchList) {
             $("#forecast-icon" + forecastPosition).append(forecastIcon);
 
             console.log(forecast.list[i].weather[0].icon);
+            console.log(forecastIcon);
 
-            $("#forecast-temp" + forecastPosition).text(
-              "Temp: " + forecast.list[i].main.temp + " °F"
-            );
+            // $("#forecast-temp" + forecastPosition).text(
+            //   "Temp: " + forecast.list[i].main.temp + " °F"
+            // );
+
+            $("#forecast-temp" + forecastPosition).text("Temperature: " + 
+            (forecast.list[i].main.temp - 273.15).toFixed(2) + " " + String.fromCharCode(176) + "C (" +
+            ((forecast.list[i].main.temp - 273.15) * 9/5 + 32).toFixed(2) + " " + String.fromCharCode(176) + "F)");
+
             $("#forecast-humidity" + forecastPosition).text(
               "Humidity: " + forecast.list[i].main.humidity + "%"
             );
