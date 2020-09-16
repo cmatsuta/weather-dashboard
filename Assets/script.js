@@ -73,10 +73,7 @@ function populateCityWeather(city, citySearchList) {
         // "https://api.openweathermap.org/data/2.5/uvi?appid=f0aec341f964791825b4d29149bf83bc" +
         // "&lat=" + lat + "&lon=" + lon;
         "https://api.openweathermap.org/data/2.5/uvi/forecast?&units=imperial&appid=f0aec341f964791825b4d29149bf83bc&q=" +
-        "&lat=" +
-        lat +
-        "&lon=" +
-        lon;
+        "&lat=" + lat + "&lon=" + lon;
 
       $.ajax({
         url: queryURL3,
